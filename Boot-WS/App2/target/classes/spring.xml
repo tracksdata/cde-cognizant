@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+<context:annotation-config/>
+<context:component-scan base-package="com"/>
+
+<!-- 	<bean id="emp" class="com.Employee" autowire="byName"> -->
+<!-- 		<property name="empId" value="2024" /> -->
+<!-- 		<property name="empName" value="James" /> -->
+<!-- 		<property name="salary" value="34873473" /> -->
+<!-- 		<property name="dept" ref="myDept"/> --> 
+<!-- 	</bean> -->
+
+
+<!-- 	<bean id="dept1" class="com.Department"> -->
+
+<!-- 		<property name="deptId" value="10" /> -->
+<!-- 		<property name="deptName" value="IT" /> -->
+
+<!-- 	</bean> -->
+	
+<!-- 		<bean id="dept" class="com.Department"> -->
+
+<!-- 		<property name="deptId" value="11" /> -->
+<!-- 		<property name="deptName" value="HR" /> -->
+
+<!-- 	</bean> -->
+
+
+</beans>
