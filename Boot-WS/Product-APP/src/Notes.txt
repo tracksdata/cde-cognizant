@@ -1,0 +1,10 @@
+1. Model / POJO / Entity classes
+
+2. Dao classes
+
+3. Service classes
+
+4. Main application
+
+
+		
