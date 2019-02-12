@@ -1,0 +1,14 @@
+package com.pricematrix;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		String[] cart1= {"P001","P002","Pp3"};
+		
+		
+
+		
+	}
+
+}

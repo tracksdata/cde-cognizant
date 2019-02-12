@@ -1,0 +1,35 @@
+package com.bill;
+
+import com.pricematrix.PriceMatrixImpl;
+
+//Dependent
+public class BillingImpl {
+	
+	/*
+	 * Design Issues
+	 * 1. too many dependency obj creations.
+	 * 			--> memory management
+	 * 			--> per issues
+	 * 
+	 * Why these issues happened?
+	 * -------------------------------
+	 * 
+	 * --> dependent class itself creating dependency class object
+	 * 
+	 * 
+	 * 
+	 */
+
+	public double getCartPrice(String[] cart) {
+
+		PriceMatrixImpl price = new PriceMatrixImpl();
+
+		double total = 0.0;
+
+		for (String itemCode : cart) {
+			total = total + price.getItemPrice(itemCode);
+		}
+		return total;
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.bill;
+
+import com.pricematrix.PriceMatrixImpl;
+
+public class BillingImpl {
+
+	public double getCartPrice(String[] cart) {
+
+		PriceMatrixImpl price = new PriceMatrixImpl();
+
+		double total = 0.0;
+
+		for (String itemCode : cart) {
+			total = total + price.getItemPrice(itemCode);
+		}
+		return total;
+	}
+
+}
