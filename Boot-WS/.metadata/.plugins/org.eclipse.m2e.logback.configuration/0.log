@@ -1,0 +1,10 @@
+2019-02-12 12:16:43,881 [Worker-28: Creating project "App1"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cts:App1:0.0.1-SNAPSHOT @ /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/App1/pom.xml.
+2019-02-12 12:16:44,371 [Worker-28: Creating project "App1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /App1/src/main/java
+2019-02-12 12:16:44,373 [Worker-28: Creating project "App1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /App1/src/main/resources
+2019-02-12 12:16:44,373 [Worker-28: Creating project "App1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /App1/src/test/java
+2019-02-12 12:16:44,373 [Worker-28: Creating project "App1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /App1/src/test/resources
+2019-02-12 12:16:44,519 [Worker-28: Auto share git projects] WARN  org.eclipse.jgit.util.FS - null
+2019-02-12 12:16:44,726 [Worker-28: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-02-12 12:16:44,732 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-12 12:16:44,734 [Worker-28: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-02-12 12:16:44,735 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

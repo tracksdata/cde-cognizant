@@ -10,7 +10,7 @@ public class Test {
 		String[] cart2 = { "P001", "P002" };
 		
 		
-		PriceMatrix price=new PriceMatrixImpl(); // dependecny obj
+		PriceMatrix price=new PriceMatrixImpl(); // dependency obj
 		
 
 		BillingImpl bill = new BillingImpl(); // dependent obj

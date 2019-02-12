@@ -1,0 +1,11 @@
+@Service
+Public Class Test{
+}
+
+@Component
+Class Abc{
+}
+
+@Component
+Class Xyz{
+}
