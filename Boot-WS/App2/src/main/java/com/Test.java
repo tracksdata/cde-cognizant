@@ -10,7 +10,7 @@ public class Test {
 		
 		AbstractApplicationContext ac=new ClassPathXmlApplicationContext("spring.xml");
 		
-		Employee e1=ac.getBean("emp",Employee.class);
+		Employee e1=ac.getBean("employee",Employee.class);
 		
 		//new Employee().info();
 		//e1.info();
@@ -19,12 +19,12 @@ public class Test {
 
 		//e1.display();
 		
-//		System.out.println(e1.getEmpId());
-//		System.out.println(e1.getEmpName());
-//		System.out.println(e1.getSalary());
-//		
-//		System.out.println(e1.getDept().getDeptId());
-//		System.out.println(e1.getDept().getDeptName());
+		System.out.println(e1.getEmpId());
+		System.out.println(e1.getEmpName());
+		System.out.println(e1.getSalary());
+		
+		System.out.println(e1.getDept().getDeptId());
+		System.out.println(e1.getDept().getDeptName());
 		
 		
 		System.out.println("--- done ");

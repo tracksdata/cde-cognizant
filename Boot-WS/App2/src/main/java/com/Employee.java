@@ -1,10 +1,11 @@
 package com;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 // Bean class / POJO
-@Component("emp")
+@Component()
 public class Employee {
 
 	private int empId;
@@ -18,7 +19,11 @@ public class Employee {
 	}
 	
 
+	@Autowired
 	private Department dept;
+	@Autowired
+	private Department dept1;
+	
 
 	public Department getDept() {
 		return dept;
