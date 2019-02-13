@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<link href="/css/mystyles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1 class="s1">
 
 
 
@@ -22,23 +21,22 @@
 	
 </tr>
 
+<c:forEach var="prod" items="${products}">
+
 <tr>
 
-<td>
-	${product.prodId}
-</td>
-
-<td>
-	${product.prodName}
-</td>
-<td>
-	${product.price}
-</td>
+<td>${prod.prodId}</td>
+<td>${prod.prodName}</td>
+<td>${prod.price}</td>
 </tr>
+
+
+</c:forEach>
+
+
+
 
 </table>
 
-
-</h1>
 </body>
 </html>

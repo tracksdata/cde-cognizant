@@ -5,7 +5,20 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-02-13T00:00:00Z</updated>
+  <updated>2019-02-13T08:06:54Z</updated>
+  <entry>
+    <title>Spring Framework 5.1.5 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/13/spring-framework-5-1-5-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2019-02-13:3561</id>
+    <updated>2019-02-13T08:06:54Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce that Spring Framework 5.1.5 &lt;a href="http://projects.spring.io/spring-framework"&gt;is available now&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This maintenance release includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.5.RELEASE"&gt;over 40 fixes and improvements&lt;/a&gt;. As usual, we&amp;rsquo;ll follow-up later this week with a maintenance release for Spring Boot 2.1, stay tuned!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-framework"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.1.5.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Apache Geode</title>
     <link rel="alternate" href="https://spring.io/blog/2019/02/13/spring-tips-apache-geode" />
@@ -872,29 +885,5 @@ dependencies {&#xD;
   &lt;li&gt;Many years ago I created the first pull-request for what was then only a mirror of the Spring Framwork on Github, a thing that &lt;a href="https://twitter.com/shidi/status/1085512615063769088?s=12"&gt;Rashidi Zin noticed on Twitter.&lt;/a&gt; Now, keep in mind, I am &lt;em&gt;by no means&lt;/em&gt; the first person to send a fix or patch or changeset or anything of the sort to Spring Framework. Just the first to do so on Github, which has only been a thing for the last few years. Spring&amp;rsquo;s been around in some form or another, on CVS, Subversion, Git and now - just recently - on Github for closer to twenty years.&lt;/li&gt;
   &lt;li&gt;The Codecentric &lt;a href="https://twitter.com/joshiste/status/1085136545504522242?s=12"&gt;Spring Boot Admin 2.1.2 has been released!&lt;/a&gt; It now supports Dischord, thanks to a contribution from the community.&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Task 2.1.0 GA is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/22/spring-cloud-task-2-1-0-ga-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Glenn Renfro</name>
-    </author>
-    <id>tag:spring.io,2019-01-14:3534</id>
-    <updated>2019-01-22T20:01:41Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce that Spring Cloud Task 2.1.0.RELEASE is now available on Github and the Pivotal download repository. Many thanks to all of those who contributed to this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-new" class="anchor" name="what-rsquo-s-new"&gt;&lt;/a&gt;What&amp;rsquo;s New?&lt;/h2&gt;
-&lt;p&gt;Spring Cloud Task 2.1.0.RELEASE is intended to be the version of the framework aligned with Spring Boot 2.1.0. Updates from 2.1.x include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Update all dependencies.&lt;/li&gt;
-  &lt;li&gt;Spring Cloud Task infrastructure components are now enabled through auto-configuration.&lt;/li&gt;
-  &lt;li&gt;The &lt;code&gt;exitCode&lt;/code&gt; of a &lt;code&gt;TaskExecution&lt;/code&gt; is &lt;code&gt;null&lt;/code&gt; when a task is executing.&lt;/li&gt;
-  &lt;li&gt;Spring Cloud Task is compatible with Java 8, 9, 10, 11.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Let&amp;rsquo;s walk through these updates in more detail.&lt;/p&gt;&lt;h2&gt;&lt;a href="#update-to-all-dependencies" class="anchor" name="update-to-all-dependencies"&gt;&lt;/a&gt;Update to All Dependencies&lt;/h2&gt;
-&lt;p&gt;As stated earlier, this release brings Spring Cloud Task into alignment with Spring Boot 2.1. This includes updating all dependencies. &lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-task-foundation-components-are-now-enabled-through-auto-configuration" class="anchor" name="spring-cloud-task-foundation-components-are-now-enabled-through-auto-configuration"&gt;&lt;/a&gt;Spring Cloud Task Foundation Components are Now Enabled through Auto-configuration&lt;/h2&gt;
-&lt;p&gt;Auto configuration is now used to create the &lt;code&gt;TaskExplorer&lt;/code&gt;, &lt;code&gt;TaskRepository&lt;/code&gt;, and other beans but does not create the &lt;code&gt;TaskLifecycleListener&lt;/code&gt; (the bean that executes the Spring Cloud Task core functionality). We added this feature to let users who are building their own applications that are not tasks monitor or browse the task repository by using the provided auto configuration. The &lt;code&gt;TaskLifecycleListener&lt;/code&gt; bean is created when a user adds the &lt;code&gt;@EnableTask&lt;/code&gt; to their application or configuration.&lt;/p&gt;&lt;h2&gt;&lt;a href="#task-execution-rsquo-s-code-exitcode-code-is-null-when-a-task-executes" class="anchor" name="task-execution-rsquo-s-code-exitcode-code-is-null-when-a-task-executes"&gt;&lt;/a&gt;Task Execution&amp;rsquo;s &lt;code&gt;exitCode&lt;/code&gt; Is Null When a Task Executes&lt;/h2&gt;
-&lt;p&gt;In previous releases of Spring Cloud Task, the &lt;code&gt;TaskExecution&lt;/code&gt; returned from Spring Cloud Task always showed that a running task&amp;rsquo;s &lt;code&gt;exitCode&lt;/code&gt; was &lt;code&gt;0&lt;/code&gt;. Now the &lt;code&gt;TaskExecution&lt;/code&gt; instances returned from Spring Cloud Task have an &lt;code&gt;exitCode&lt;/code&gt; of &lt;code&gt;null&lt;/code&gt; if the task is still executing.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-do-you-think" class="anchor" name="what-do-you-think"&gt;&lt;/a&gt;What Do You Think?&lt;/h2&gt;
-&lt;p&gt;We look forward to your feedback on these new features in &lt;a href="https://github.com/spring-cloud/spring-cloud-task/issues"&gt;Github&lt;/a&gt;, on &lt;a href="http://stackoverflow.com/tags/spring-cloud-task"&gt;StackOverflow&lt;/a&gt;, &lt;a href="https://gitter.im/spring-cloud/spring-cloud-task"&gt;Gitter&lt;/a&gt;, or directly via Twitter to &lt;a href="https://twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://twitter.com/cppwfs"&gt;@cppwfs&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-task/"&gt;Spring Cloud Task Home&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-task"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-cloud-task/docs/2.1.0.RELEASE/reference/htmlsingle/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>
