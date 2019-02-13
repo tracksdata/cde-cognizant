@@ -1,6 +1,9 @@
 package com.cts.product.config;
 
 
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,23 +24,20 @@ public class JavaConfig {
 	private Environment env;
 	
 	@Bean
-    public DriverManagerDataSource mysqlDataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    public DataSource mysqlDataSource() {
+       // DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		BasicDataSource dataSource=new BasicDataSource();
         dataSource.setDriverClassName(env.getProperty("driver"));
         dataSource.setUrl(env.getProperty("url"));
         dataSource.setUsername(env.getProperty("user"));
         dataSource.setPassword(env.getProperty("password"));
-       // System.out.println("Password "+env.getProperty("password"));
-       // JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-       // System.out.println(jdbcTemplate.getMaxRows());
 
         return dataSource;
     }
 	
 	@Bean
-	public JdbcTemplate getJdbcTemplate() {
-		
-		return new JdbcTemplate(mysqlDataSource());
+	public JdbcTemplate getJdbcTemplate(DataSource ds) {
+		return new JdbcTemplate(ds);
 
 		
 	}

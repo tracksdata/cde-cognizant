@@ -19,6 +19,7 @@ public class ProductDaoImpl implements ProductDao {
 	public void saveProduct(Product product) {
 		
 		String qry="insert into product values(?,?,?)";
+		
 	    jt.update(qry,product.getProductId(),product.getProductName(),product.getPrice());
 		
 		System.out.println("Dao: Saving " + product.getProductName() + " to DB");
