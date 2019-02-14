@@ -14,8 +14,8 @@ public class BootJdbcTemplateApplication {
 		ApplicationContext ac=SpringApplication.run(BootJdbcTemplateApplication.class, args);
 		
 		 Product product=new Product();
-		 product.setProdId("P004");
-		 product.setProdName("Dell Laptop");
+		 product.setProdId("P01");
+		 product.setProdName("Mobile1");
 		 product.setPrice(135600);
 		 
 		 ProductService ps=ac.getBean(ProductService.class);
