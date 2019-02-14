@@ -12,6 +12,13 @@ import org.springframework.stereotype.Repository;
 
 import com.cts.product.entity.Product;
 
+/*
+ *  create database test;
+ *  use test; 
+ *  create table product(product_id varchar(20) primary key, product_name varchar(20), price double);
+ * 
+ */
+
 @Repository
 public class ProductSDaoImpl implements ProductDao {
 
