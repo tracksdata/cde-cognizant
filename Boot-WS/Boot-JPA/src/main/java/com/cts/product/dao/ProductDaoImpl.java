@@ -7,11 +7,14 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.cts.product.entity.Product;
 
 @Repository
+@Transactional()
 public class ProductDaoImpl implements ProductDao {
 
 	@PersistenceContext
@@ -34,13 +37,14 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
+	@Transactional
 	public Product findById(String prodId) {
 		return em.find(Product.class, prodId);
 	}
 
 	@Override
 	public void updateProduct(Product product) {
-			em.persist(product);
+			em.merge(product);
 	}
 
 	@Override
@@ -60,7 +64,9 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public List<Product> findProductByName(String prodName) {
 
-		String q1="select prod.id,prod.product_name,prod.price from Product as prod where prod.product_name like %"+prodName+"%";
+		String q1="select prod.id,prod.product_name,prod.price "
+				+ "from Product as prod where prod.product_name "
+				+ "like %"+prodName+"%";
 		Query qry=em.createQuery(q1);
 		return qry.getResultList();
 	}

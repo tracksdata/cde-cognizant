@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 import com.cts.product.dao.ProductDao;
 import com.cts.product.entity.Product;
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
+	
 	
 	@Autowired
 	private ProductDao prodDao;
@@ -19,40 +21,55 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public void saveProduct(Product product) {
-		prodDao.saveProduct(product);
+		
+		prodDao.save(product);
+		
 	}
 	
 	@Override
 	public List<Product> listAll(){
-		return prodDao.listAll();
+		
+		return prodDao.findAll();
 	}
 	
 	
 	@Override
 	public Product findById(String prodId) {
-		return prodDao.findById(prodId);
+		return prodDao.getOne(prodId);
+	}
+	
+	public Product findById_v1(String prodId) {
+		
+		return prodDao.findById(prodId).orElse(null);
 	}
 	
 	
 	@Override
 	public void updateProduct(Product product) {
-		prodDao.updateProduct(product);
+		prodDao.save(product);
 	}
 	
 	@Override
 	public void removeProduct(Product product) {
-		prodDao.removeProduct(product);
+		prodDao.delete(product);
 	}
 	
 	@Override
 	public void removeProductById(String prodId) {
-		prodDao.removeProductById(prodId);
+		prodDao.deleteById(prodId);
+		
 	}
 	
 	@Override
 	public List<Product> findProductByName(String prodName){
-		
-		return prodDao.findProductByName(prodName);
+
+		return prodDao.findProductByProductNameIsLike(prodName);
+	}
+
+	@Override
+	public List<Product> findProductByPriceIsGreaterThanEqual(double price) {
+		// TODO Auto-generated method stub
+		return prodDao.findProductByPriceIsGreaterThanEqual(price);
 	}
 
 }
