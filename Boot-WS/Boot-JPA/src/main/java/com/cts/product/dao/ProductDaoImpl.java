@@ -23,7 +23,7 @@ public class ProductDaoImpl implements ProductDao {
 
 		em.persist(product);
 
-		System.out.println("Dao: Saved " + product.getProdName());
+		System.out.println("Dao: Saved " + product.getProductName());
 	}
 
 	@Transactional
@@ -35,28 +35,34 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public Product findById(String prodId) {
-		return null;
+		return em.find(Product.class, prodId);
 	}
 
 	@Override
 	public void updateProduct(Product product) {
-
+			em.persist(product);
 	}
 
 	@Override
 	public void removeProduct(Product product) {
 
+		em.remove(product);
 	}
 
 	@Override
 	public void removeProductById(String prodId) {
-
+		Product prod=em.find(Product.class, prodId);
+		if(prod!=null) {
+			em.remove(prod);
+		}
 	}
 
 	@Override
 	public List<Product> findProductByName(String prodName) {
 
-		return null;
+		String q1="select prod.id,prod.product_name,prod.price from Product as prod where prod.product_name like %"+prodName+"%";
+		Query qry=em.createQuery(q1);
+		return qry.getResultList();
 	}
 
 }

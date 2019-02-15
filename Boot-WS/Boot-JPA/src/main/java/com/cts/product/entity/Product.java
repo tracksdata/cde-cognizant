@@ -5,32 +5,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@GenericGenerator(name="mg",strategy="com.cts.product.entity.MyGen")
 public class Product {
 
 	@Id
-	//@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="product_id")
-	private String prodId;
-	@Column(name="product_name")
-	private String prodName;
+	@GeneratedValue(generator="mg")
+	private String productId;
+	@Transient
+	private String info;
+	private String productName;
 	private double price;
 
-	public String getProdId() {
-		return prodId;
+	public String getProductId() {
+		return productId;
 	}
 
-	public void setProdId(String prodId) {
-		this.prodId = prodId;
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 
-	public String getProdName() {
-		return prodName;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProdName(String prodName) {
-		this.prodName = prodName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 	public double getPrice() {
