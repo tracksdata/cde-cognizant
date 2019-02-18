@@ -6423,3 +6423,53 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2019-02-18 16:58:26,615 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-02-18 16:58:26,616 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-02-18 16:58:26,616 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 16:59:30,864 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 16:59:30,864 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 16:59:30,865 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 16:59:30,865 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 16:59:30,865 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:00:15,993 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:00:15,993 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:00:15,994 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:00:15,995 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:00:15,995 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:01:12,929 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:01:12,930 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:01:12,931 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:01:12,932 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:01:12,932 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:03:22,555 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:03:22,555 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:03:22,556 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:03:22,557 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:03:22,557 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:03:42,059 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:03:42,060 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:03:42,061 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:03:42,062 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:03:42,062 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:03:55,085 [Worker-790: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:03:55,085 [Worker-790: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:03:55,086 [Worker-790: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:03:55,087 [Worker-790: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:03:55,087 [Worker-790: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:05:30,926 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:05:30,926 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:05:30,927 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:05:30,928 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:05:30,928 [Worker-788: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:07:05,263 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:07:05,264 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:07:05,265 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:07:05,267 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:07:05,267 [Worker-791: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:09:58,177 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:09:58,178 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:09:58,179 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:09:58,180 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:09:58,180 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
+2019-02-18 17:13:01,726 [Worker-782: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:13:01,728 [Worker-782: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-02-18 17:13:01,729 [Worker-782: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-02-18 17:13:01,730 [Worker-782: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-18 17:13:01,730 [Worker-782: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/praveen/Training/Cognizant/Spring Boot/Boot-WS/Boot-MongoDB/src/test/resources
