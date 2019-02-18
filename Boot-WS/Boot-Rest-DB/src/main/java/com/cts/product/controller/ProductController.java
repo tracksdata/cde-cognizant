@@ -29,7 +29,6 @@ public class ProductController {
 
 	@GetMapping("/products/{prodId}")
 	public Product getOne(@PathVariable("prodId") String prodId) {
-		// Product prod=ps.f
 		return ps.findById_v1(prodId);
 	}
 
@@ -55,5 +54,17 @@ public class ProductController {
 	public void deleteProduct(@RequestBody Product prod) {
 		ps.removeProduct(prod);
 	}
+	
+	@GetMapping("/products/byName/{prodName}")
+	public List<Product> findByproductName(@PathVariable("prodName") String prodName) {
+		return ps.findProductByName("%"+prodName+"%");
+	}
+	
+	@GetMapping("/products/byPrice/{price}")
+	public List<Product> bySalary(@PathVariable("price")double price){
+		
+		return ps.findProductByPriceIsGreaterThanEqual(price);
+	}
+	
 
 }
