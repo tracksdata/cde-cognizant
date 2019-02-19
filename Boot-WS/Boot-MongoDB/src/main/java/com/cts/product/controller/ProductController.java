@@ -21,14 +21,10 @@ public class ProductController {
 	
 	@Autowired
 	private ProductDao prodDao;
-	
-	
 	@GetMapping("/products")
 	public List<Product> listAll(){
 		return prodDao.findAll();
 	}
-	
-	
 	@PostMapping("/products")
 	public void saveProduct(@RequestBody Product product) {
 		prodDao.save(product);
@@ -38,7 +34,6 @@ public class ProductController {
 	public void updateProduct(@RequestBody Product product) {
 		prodDao.save(product);
 	}
-	
 	@DeleteMapping("/products/{prodId}")
 	public void deleteById(@PathVariable("prodId")String prodId) {
 		prodDao.deleteById(prodId);
