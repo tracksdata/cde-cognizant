@@ -5,7 +5,37 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-02-19T19:46:00Z</updated>
+  <updated>2019-02-20T08:49:04Z</updated>
+  <entry>
+    <title>Spring Tips: Season 5 Recap</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/20/spring-tips-season-5-recap" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-02-20:3569</id>
+    <updated>2019-02-20T08:49:04Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Can you believe it? We&amp;rsquo;re at the end of yet another season - our &lt;em&gt;fifth&lt;/em&gt;! - of &lt;em&gt;Spring Tips&lt;/em&gt;! I wasn&amp;rsquo;t sure at first (when we started down this journey a few years ago) that these videos would take off or become popular but it seems the Spring community&amp;rsquo;s curiosity knows no bounds! &lt;/p&gt;
+&lt;p&gt;I try in every season to look at new technology (RSocket and R2DBC, eh, &lt;em&gt;spring&lt;/em&gt; to mind..), and to introduce variations on themes (we looked at three projects that extend Spring Cloud to native IaaS-platforms this season!), and to introduce potentially niche but often appreciated topics (this season we looked at BPMN 2 workflow management with Flowable and we looked JavaFX, for example). I also try whenever possible to introduce concepts in terms of Spring (where normally I introduce Spring in terms of the concepts they support). This season was, from that perspective, a success. &lt;/p&gt;
+&lt;p&gt;This season also marks the first full season with me back at the helm of an Apple MacBook Pro; viewers might&amp;rsquo;ve noticed that I switched between Linux and macOS over the various years of doing these videos. My production methodology changes dramatically, too! It&amp;rsquo;s interesting to me to look at the user interfaces on display in the earlier videos to see their progressions. &lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m very excited for season six! I&amp;rsquo;ve got a lot of good stuff cooking, so be sure &lt;a href="http://Twitter.com/SpringTipsLIve"&gt;to follow @SpringTipsLive&lt;/a&gt; on Twitter for more. You can catchup on the older videos on &lt;a href="https://bit.ly/spring-tips-playlist"&gt;the Spring Tips playlist&lt;/a&gt;, in the meantime. &lt;/p&gt;
+&lt;p&gt;I love doing the screencasts because I can explain concepts and articulate code to support those concepts visually with some ease. But that discussion often ignores the &lt;em&gt;people&lt;/em&gt; behind the technology; what motivated our team to create something like Spring Boot? How is the code across the Spring portfolio projects so consistently clean? How do other organizations use Spring? These questions can be just as illuminating, and they lend themselves to natural discussions. So, I just launched a pdocast focused on the people in the Spring ecosystem called &lt;a href="http://bit.ly/a-bootiful-podcast"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;&lt;/a&gt;. It&amp;rsquo;s available for Apple and Android devices. I hope you&amp;rsquo;ll listen in and feedback. &lt;/p&gt;
+&lt;p&gt;As always I hope you like these Spring Tips videos. I&amp;rsquo;d love any feedback you have on them, good, bad or indifferent: find and follow me &lt;a href="http://twitter.com/Starbuxman"&gt;on Twitter (@starbuxman)&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This season kicked off in December 2018, paused for the holidays and continued until just last week, the week of February 13. Here&amp;rsquo;s a list of all the videos and the links to the pages where you can watch them. Enjoy and, as always, we&amp;rsquo;ll see you next time!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/12/05/spring-tips-bootiful-microsoft-azure"&gt;Microsoft Azure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/12/12/spring-tips-bootiful-google-cloud-platform"&gt;Google Cloud Platform&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/12/19/spring-tips-reactive-sql-data-access-with-spring-data-r2dbc"&gt;Reactive SQL Data Access with Spring Data R2DBC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2018/12/26/spring-tips-bootiful-alibaba"&gt;Alibaba &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/02/spring-tips-rsocket"&gt;RSocket &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/09/spring-tips-business-process-management-with-flowable"&gt;Flowable&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/16/spring-tips-javafx"&gt;JavaFX&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/23/spring-tips-hedging-client-requests-with-the-reactive-webclient-and-a-service-registry"&gt;Reactively Hedging Client Requests with a Service Registry&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/30/spring-tips-the-reactor-context"&gt;The Reactor Context &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/02/06/spring-tips-testing-reactive-code"&gt;Testing Reactive Code&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/02/13/spring-tips-apache-geode"&gt;Apache Geode &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - February 19, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/02/19/this-week-in-spring-february-19-2019" />
@@ -648,32 +678,5 @@ Data&lt;/em&gt; &lt;code&gt;Kay&lt;/code&gt;, so too will SSDG &lt;code&gt;2.0.x
   &lt;li&gt;the Software Engineering Daily podcast has a great episode on &lt;a href="https://softwareengineeringdaily.com/2019/01/22/rsocket-reactive-streaming-service-networking-with-ryland-degnan/"&gt;RSocket, the reactive streaming service networking protocol, with Ryland Degnan&lt;/a&gt;. Spring Framework 5.2 is intended to integrate RSocket, as well.&lt;/li&gt;
   &lt;li&gt;Here&amp;rsquo;s an interesting podcast episode from The New Stack on &lt;a href="https://twitter.com/cloudfoundry/status/1087822407950249984"&gt;people using Cloud Foundry at scale&lt;/a&gt; - check it out.&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tools 4.1.1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/25/spring-tools-4-1-1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2019-01-25:3551</id>
-    <updated>2019-01-25T18:40:04Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;I am happy to announce the 4.1.1 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Atom.&lt;/p&gt;
-&lt;p&gt;Highlights from this release include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;(Spring Boot) easy navigation via symbols now available for regular Spring projects (not using Spring Boot)&lt;/li&gt;
-  &lt;li&gt;(Spring Boot) live hover for beans and bean wirings now available for regular Spring projects (not using Spring Boot)&lt;/li&gt;
-  &lt;li&gt;(Spring Boot) support for deprecated propertied added to property editors, including corresponding quick fixes&lt;/li&gt;
-  &lt;li&gt;(Eclipse) boot dashboard now shows environment information including all properties and their values for running boot apps&lt;/li&gt;
-  &lt;li&gt;(Eclipse) default distribution brings back support for local Tomcat servers and deploying war-packaged boot apps to those local servers&lt;/li&gt;
-  &lt;li&gt;various bug fixes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Atom, please go visit:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-01-24-411-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-01-24-411-release&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;</content>
   </entry>
 </feed>
