@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "custom",
+      "type": "com.bank.config.CustomConfigProperties",
+      "sourceType": "com.bank.config.CustomConfigProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "custom.value",
+      "type": "java.lang.String",
+      "sourceType": "com.bank.config.CustomConfigProperties"
+    }
+  ],
+  "hints": []
+}
