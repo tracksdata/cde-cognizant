@@ -7,16 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to Shop APP dear ${user.userId}</h1>
-<hr/>
 
-<h3>
+<p align="center">
+<a href="/">Home</a>|
+<a href=findProduct>Find Product</a> |
 <a href="listAll">Display Products</a>
-</h3>
-<h3>
-<a href="findProduct">Find Product</a>
-</h3>
 
+</p>
 
 </body>
 </html>

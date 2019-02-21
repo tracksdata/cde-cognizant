@@ -5,7 +5,64 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-02-20T08:49:04Z</updated>
+  <updated>2019-02-20T10:57:26Z</updated>
+  <entry>
+    <title>What's new with Spring Initializr</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/02/20/what-s-new-with-spring-initializr" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Madhura Bhave</name>
+    </author>
+    <id>tag:spring.io,2019-02-19:3567</id>
+    <updated>2019-02-20T10:57:26Z</updated>
+    <content type="html">&lt;p&gt;The quickest way to generate Spring Boot projects is through &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;. The site provides a curated list of dependencies that you can add to your application based on the selected Spring Boot version. You can also choose the language, build system and JVM version for the project. Over the years, the popularity of start.spring.io as the tool for generating Spring projects has grown exponentially and millions of projects are generated every year using the site.&lt;/p&gt;
+&lt;p&gt;For the past few months, we’ve been working on a complete overhaul of the project generation API. To better understand the motivation behind this, take a look at the project structure below:&lt;br/&gt;&lt;img src="https://raw.githubusercontent.com/mbhave/initializr/cd9582d6a0b092e311d0b255d6f767723d47fa44/initializr-structure-old.png" alt="Old Structure" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;initializr-generator&lt;/code&gt; is the library that contains the core of the project generation API.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;initializr-web&lt;/code&gt; contains the the REST endpoints and everything related to the web UI.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;initializr-site&lt;/code&gt; contains all the customizations that are available on start.spring.io.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The problem with the existing API was that for anyone who wanted to customize project generation, the only sensible way to do that was to fork the library and extend or modify the &lt;code&gt;ProjectGenerator&lt;/code&gt; class. This made for quite a clunky developer experience. &lt;/p&gt;&lt;h2&gt;&lt;a href="#new-project-generation-api" class="anchor" name="new-project-generation-api"&gt;&lt;/a&gt;New Project Generation API&lt;/h2&gt;
+&lt;p&gt;The main goal of the new API is to allow customizing the generated project without forking the library. To allow a contribution model for various aspects of the project, there is an abstraction for each of them. These include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A build abstraction with Maven and Gradle implementations that enables customization of the build file&lt;/li&gt;
+  &lt;li&gt;A language abstraction with Java, Groovy and Kotlin implementations&lt;/li&gt;
+  &lt;li&gt;A more high-level model for text resources, &lt;code&gt;.gitignore&lt;/code&gt; and basic configuration files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These abstractions are made available via several hook points that you can use to customize project assets:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;BuildCustomizer&lt;/code&gt; to add dependencies, plugins or other configuration items&lt;/li&gt;
+  &lt;li&gt;Source file customizer to add annotations, methods or additional classes to a project&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ProjectContributor&lt;/code&gt;, a high-level hook-point to add assets to a directory structure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The library provides several conditions so that customizers can be applied based on the requested project. The following example illustrates how the Gradle build can be tuned to apply the &lt;code&gt;war&lt;/code&gt; plugin when a &lt;code&gt;war&lt;/code&gt; packaging is requested:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
+@ConditionalOnPackaging(WarPackaging.ID)&#xD;
+public BuildCustomizer&amp;lt;GradleBuild&amp;gt; warPluginContributor() {&#xD;
+    return (build) -&amp;gt; build.addPlugin(&amp;quot;war&amp;quot;);&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The idea is that customizers can be defined in external modules (a bit similar to auto-configurations in Spring Boot) with no change to the library necessary. &lt;/p&gt;
+&lt;p&gt;As part of the refactoring, we&amp;rsquo;ve also refined the project structure.&lt;br/&gt;﻿&lt;img src="https://raw.githubusercontent.com/mbhave/initializr/10f4f0470135197c18300db6b5e93bce680b9249/initializr-image-new.png" alt="New Structure" /&gt;&lt;/p&gt;
+&lt;p&gt;The top-level concepts such as &lt;code&gt;ProjectContributor&lt;/code&gt;, &lt;code&gt;BuildCustomizer&lt;/code&gt; are in &lt;code&gt;initializr-generator&lt;/code&gt;. This module also contains the minimum infrastructure necessary to actually generate a project. &lt;code&gt;initializr-generator-spring&lt;/code&gt; provides the contributors for the project structure that we would like to generate for Spring projects. Additionally, the code is now split into two repositories on GitHub, one for &lt;a href="https://github.com/spring-io/initializr"&gt;the library&lt;/a&gt; and the other for &lt;a href="https://github.com/spring-io/start.spring.io"&gt;&lt;code&gt;start-site&lt;/code&gt;&lt;/a&gt; that represents our production instance on &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#new-features-on-start-spring-io" class="anchor" name="new-features-on-start-spring-io"&gt;&lt;/a&gt;New features on start.spring.io&lt;/h2&gt;
+&lt;p&gt;The new project generation API has enabled us to easily add quite a few features to start.spring.io. We&amp;rsquo;ve merged them today so you can use those right away.&lt;/p&gt;&lt;h3&gt;&lt;a href="#help-document" class="anchor" name="help-document"&gt;&lt;/a&gt;Help Document&lt;/h3&gt;
+&lt;p&gt;The generated project now contains a &lt;code&gt;HELP.md&lt;/code&gt; file at the root of the project. The file is tailored according to the dependencies present in the application. Currently, it contains links to guides and reference docs related to the selected dependencies. In the future, we plan to customize the HELP.md file further to provide next steps that will help you grow your application. &lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-rest-docs-build-configuration" class="anchor" name="spring-rest-docs-build-configuration"&gt;&lt;/a&gt;Spring Rest Docs Build Configuration&lt;/h3&gt;
+&lt;p&gt;If a project is generated with the &lt;code&gt;restdocs&lt;/code&gt; dependency, the build is configured with the Asciidoctor plugin using a &lt;code&gt;BuildCustomizer&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#auto-generation-of-directory-structure-for-flyway" class="anchor" name="auto-generation-of-directory-structure-for-flyway"&gt;&lt;/a&gt;Auto-generation of directory structure for Flyway&lt;/h3&gt;
+&lt;p&gt;For a generated project that uses &lt;code&gt;Flyway&lt;/code&gt;, a &lt;code&gt;src/main/resources/db/migration&lt;/code&gt; is now automatically created. To illustrate how easy this can be done with the API, here is the contributor for that feature:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Bean&#xD;
+@ConditionalOnRequestedDependency(&amp;quot;flyway&amp;quot;)&#xD;
+public ProjectContributor flywayProjectContributor() {&#xD;
+  return (directory) -&amp;gt; {&#xD;
+     Path migrationDirectory = directory&#xD;
+           .resolve(&amp;quot;src/main/resources/db/migration&amp;quot;);&#xD;
+     Files.createDirectories(migrationDirectory);&#xD;
+  };&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#what-s-coming" class="anchor" name="what-s-coming"&gt;&lt;/a&gt;What’s coming&lt;/h2&gt;
+&lt;p&gt;We’ve barely scratched the surface of what is possible with the new API and we want to bring new features while still keeping a balance between an improved developer experience and non intrusive changes.&lt;/p&gt;
+&lt;p&gt;Typically, we want to bring more content to HELP.md where dedicated tips can be provided based on selected dependencies and, more importantly, dependencies you could have selected to bring awareness of what you might not know yet.&lt;/p&gt;
+&lt;p&gt;We are also working on a new Web UI for start.spring.io and ways to help you expand your applications, stay tuned!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Season 5 Recap</title>
     <link rel="alternate" href="https://spring.io/blog/2019/02/20/spring-tips-season-5-recap" />
@@ -649,34 +706,5 @@ Data&lt;/em&gt; &lt;code&gt;Kay&lt;/code&gt;, so too will SSDG &lt;code&gt;2.0.x
     <content type="html">&lt;p&gt;Hi Spring fans! In this installment of Spring Tips we answer the question, &amp;ldquo;how do I propagate state across asynchronous, reactive execution pipelines?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;speaker: &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/5tlZddM5Jo0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - January 29th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/01/29/this-week-in-spring-january-29th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-01-29:3552</id>
-    <updated>2019-01-29T08:05:58Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Can you believe we&amp;rsquo;re already staring down February?? I&amp;rsquo;m still shaking off the vacation feels from the holiday break. I&amp;rsquo;m at the airport, SFO, a few minutes after midnite in PST, waiting to board for my flight to Houston, a connection en route to Charlotte, North Carolina, for the epic SpringOne Tour event - the first of a brand new year! I look forward to seeing y&amp;rsquo;all there!&lt;/p&gt;
-&lt;p&gt;Anyway, we&amp;rsquo;ve got tons to get to so let&amp;rsquo;s!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/25/spring-tools-4-1-1-released"&gt;Spring Tools 4.1.1 released&lt;/a&gt; - this new release is packed with tons of features, don&amp;rsquo;t miss it!&lt;/li&gt;
-  &lt;li&gt;LISTEN: in this latest installment of my podcast, &lt;a href="https://spring.io/blog/2019/01/25/a-bootiful-podcast-an-interview-with-spring-boot-engineer-madhura-bhave"&gt;&lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I interview Spring Boot legend Madhura Bhave&lt;/a&gt;. Don&amp;rsquo;t miss it!&lt;/li&gt;
-  &lt;li&gt;WATCH: In last week&amp;rsquo;s installment of &lt;em&gt;Spring Tips&lt;/em&gt; I look at &lt;a href="https://spring.io/blog/2019/01/23/spring-tips-hedging-client-requests-with-the-reactive-webclient-and-a-service-registry"&gt;hedging client requests with the reactive &lt;code&gt;WebClient&lt;/code&gt; and a service registry&lt;/a&gt; as supported by Spring Cloud&amp;rsquo;s &lt;code&gt;DiscoveryClient&lt;/code&gt; abstraction.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/24/spring-io-platform-cairo-sr7"&gt;Spring IO Platform Cairo-SR7&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/24/spring-io-platform-brussels-sr16"&gt;Spring IO Platform Brussels-SR16&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/01/23/spring-cloud-greenwich-release-is-now-available"&gt;Spring Cloud Greenwich.RELEASE is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://content.pivotal.io/pivotal-blog/new-tools-from-pivotal-ibm-pave-the-way-for-java-ee-websphere-apps-to-move-to-cloud-foundry-and-kubernetes"&gt;New Tools from Pivotal, IBM Pave the Way for Java EE WebSphere Apps to Move to Cloud Foundry and Kubernetes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://blog.codecentric.de/en/2019/01/securing-spring-boot-admin-actuator-endpoints-keycloak/"&gt;Securing Spring Boot Admin &amp;amp; Actuator Endpoints with Keycloak&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This looks pretty interesting: Fetch only the needed data from the database &lt;a href="https://twitter.com/SpringData/status/1089568324080545792"&gt;via Spring Data Projections (DTOs) and enrich the result via virtual properties&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The NewStack has a nice post on &lt;a href="https://cloud.google.com/blog/products/application-development/announcing-spring-cloud-gcp-1-1-deepening-ties-pivotals-spring-framework"&gt;Spring Cloud GCP 1.1 - check it out!&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Cloud Foundry foundation directory Abby Kearns &lt;a href="http://vmblog.com/archive/2019/01/25/cloud-foundry-foundation-2019-predictions-rapid-cloud-adoption-will-lead-to-increased-market-consolidation.aspx#.XE_-x89KiL5"&gt;predicts trends for 2019&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://junit.org/junit5/docs/5.4.0-RC1/release-notes/"&gt;JUnit 5.4 RC1 is now available. Please kick the tires and give us feedback before 5.4 GA! 5.4 RC1 also includes &lt;code&gt;@RegisterExtension&lt;/code&gt; ordering, &lt;code&gt;null&lt;/code&gt; and empty argument sources for &lt;code&gt;@ParameterizedTest&lt;/code&gt; methods, &lt;code&gt;@TempDir&lt;/code&gt; field injection&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;I love this series of posts introducing &lt;a href="https://t.co/N6Oquu3Cbu?ssr=true"&gt;Kubernetes for Spring developers &lt;/a&gt; by the legendary Kubernetes &lt;a href="https://twitter.com/pczarkowski"&gt;community member Paul Czarkowski &lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the Software Engineering Daily podcast has a great episode on &lt;a href="https://softwareengineeringdaily.com/2019/01/22/rsocket-reactive-streaming-service-networking-with-ryland-degnan/"&gt;RSocket, the reactive streaming service networking protocol, with Ryland Degnan&lt;/a&gt;. Spring Framework 5.2 is intended to integrate RSocket, as well.&lt;/li&gt;
-  &lt;li&gt;Here&amp;rsquo;s an interesting podcast episode from The New Stack on &lt;a href="https://twitter.com/cloudfoundry/status/1087822407950249984"&gt;people using Cloud Foundry at scale&lt;/a&gt; - check it out.&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>
