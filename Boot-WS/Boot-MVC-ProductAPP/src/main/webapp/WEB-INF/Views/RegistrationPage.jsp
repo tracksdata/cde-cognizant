@@ -35,7 +35,7 @@
 
 			<tr>
 				<td>Mobile Number</td>
-				<td><input name="mobileNumber" />
+				<td><input name="phoneNumber" type="number" />
 			</tr>
 
 			<tr>
