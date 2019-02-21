@@ -12,6 +12,7 @@
 <a href="/">Home</a>|
 <a href=findProduct>Find Product</a> |
 <a href="listAll">Display Products</a>
+<a href="loadForm">Add Product</a>
 
 </p>
 

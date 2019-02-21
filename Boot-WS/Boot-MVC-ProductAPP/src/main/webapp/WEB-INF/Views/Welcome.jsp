@@ -10,12 +10,7 @@
 <h1>Welcome to Shop APP dear ${user.userId}</h1>
 <hr/>
 
-<h3>
-<a href="listAll">Display Products</a>
-</h3>
-<h3>
-<a href="findProduct">Find Product</a>
-</h3>
+<jsp:include page="usermenu.jsp"/>
 
 
 </body>

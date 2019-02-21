@@ -64,13 +64,32 @@ public class ProductController {
 		}
 
 		mav.setViewName(viewName);
+		
 		return mav;
 
 	}
 
+	@RequestMapping("/loadForm")
+	public String loadSaveproductForm() {
+		return "AddProduct";
+	}
 	@RequestMapping("/saveProduct")
-	public void saveProduct(@ModelAttribute Product product) {
-		prodService.updateProduct(product);
+	public ModelAndView saveProduct(@ModelAttribute Product product) {
+		ModelAndView mav=new ModelAndView();
+		String msg=null;
+		Product dp=prodService.findById(product.getProductId());
+		if(dp==null) {
+			prodService.updateProduct(product);
+			msg="Product "+product.getProductName()+" Saved to DB";
+		}
+		else {
+			msg="Product id "+product.getProductId()+" already Exists in DB";
+		}
+		
+		mav.setViewName("AddProduct");
+		mav.addObject("msg", msg);
+		
+		return mav;
 	}
 
 	@RequestMapping("/updateProduct")
