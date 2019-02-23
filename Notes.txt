@@ -1,0 +1,177 @@
+7899177290
+Spring
+	-> Core
+	-> AOP -> logginging and tracing of applications, mainly used in transaction management
+	-> DATA
+			-> JDBC
+			-> ORM
+	-> WEB
+		-> MVC
+		-> REST API
+		-> Web Flow
+---------------
+-> BATCH
+-> Integration
+-> Security
+-> Messaging
+
+
+
+Spring DATA
+------------------
+	1. JDBC Template  -> Data source
+				-> DataSourceManagemement -> spring
+				-> DataSource -> dbcp, and dbcp2
+				-> DataSource -> tomcat
+				-> Datasource -> HicariCP
+
+	2. ORM
+			JPA, Hibernate, Toplink
+
+    
+------------------------------------
+
+Java JDBC
+-----------------
+	-> Managege connections
+	-> Exception handling
+	-> Transaction Management
+	-> Native SQL queries
+			-> Code Tangling
+			-> Code Scaterring
+
+-------------------------------------
+
+
+Mappings
+--------------
+1. On to One
+2. One to Many (Collections)
+3. Many to One
+4. Many to Many (Collections)
+
+----------------------------------------
+??  --> Many to Any (Collection)
+
+
+WEB Services
+--------------------
+1. SOAP
+		-> UDDI
+		-> WSDL
+
+  JAX-WS
+	
+	
+
+2. REST
+1. JAVA
+	JAX-RS
+		-> Jersy
+		-> rest Easy
+2. Spring Rest API
+	Spring rest API
+
+		JSON (Java Script object notation)
+
+Java Script
+---------------
+Object?
+----------
+New key word ? -> function name with first letter capital
+
+function Employee(){
+
+}
+
+var emp=new Employee();
+
+var obj=new Object();
+// JSON
+var emp={ 
+Id:1024,
+Name:'Praveen,
+Salary:74574
+} 
+
+HTTP  REST API Mappings :
+
+1. GET // Retrieve from db/server
+2. POST // saving new 
+3. PUT // update
+4. DELETE // delete 
+
+HTTP Status Codes
+------------------------
+1x -> 100 to 199-> information
+2x ->  200 to 299 -> Success
+3x -> 300 to 399 -> Redirections
+4x -> 400 to 499 -> Client side errors
+5x -> 500 to 599 -> Server side errors
+
+
+URL
+------
+1. Rest URL
+	-> http://localhost:8080/api
+2. End point URL
+http://localhost:8080/api/product
+http://localhost:8080/api/admin/product
+http://localhost:8080/api/user/product
+
+
+use cts 
+
+
+db.createUser(
+{
+	user: "user2",
+
+	pwd: "password2",
+
+	roles:[{role: "userAdmin" , db:"cts"}]
+})
+
+Spring Security
+---------------------
+1. Autrh -> 
+		-> basic
+		-> form
+2. Authorization - role based access
+
+inMemory -> session object
+
+15 -
+10- GET: http://localhost:8080/api/products - user 
+5 - POST: http://localhost:8080/api/products - admin
+
+
+Spring 4 Security
+-------------------
+Noop
+
+Spring 5 Security
+--------------------
+BCrypt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
