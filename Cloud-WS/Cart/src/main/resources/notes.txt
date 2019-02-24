@@ -1,0 +1,8 @@
+Send POST MAN POST Request
+--------------------------------
+{
+	"item":{
+		"id":111,"name":"ITEM-1","price":1000.0,"imageUrl":"images/Laptop.png","date":"2018-12-11T18:30:00.000+0000","description":"this is item 1"
+	},
+	"qty":2
+}

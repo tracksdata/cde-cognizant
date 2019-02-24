@@ -29,6 +29,10 @@ public class CarRepositoryImpl implements CartRepository {
 		System.out.println("Item(s) saved to redis on key  "+user);
 		return itemLine;
 	}
+	
+	public String getMessage(int itemCode) {
+		return "No Item Code found in  db with given ItemCode "+itemCode;
+	}
 
 	@Override
 	public List<ItemLine> findAll(String user) {

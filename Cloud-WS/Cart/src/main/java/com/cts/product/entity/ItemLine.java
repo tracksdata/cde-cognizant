@@ -2,10 +2,16 @@ package com.cts.product.entity;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="CartItems")
 public class ItemLine implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	private String user;
+	@Id
 	private Item item;
 	private int qty;
 	
@@ -17,6 +23,18 @@ public class ItemLine implements Serializable {
 		super();
 		this.item = item;
 		this.qty = qty;
+	}
+	
+	
+	
+	
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	public Item getItem() {

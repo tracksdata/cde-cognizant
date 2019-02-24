@@ -2,25 +2,15 @@ package com.cts.product.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
-@Entity
 public class Product {
 	
-	@Id
 	private int id;
 	private String name;
 	private double price;
 	private String imageUrl;
-	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	private String description;
-	@Transient
-	private double discount;
 	public int getId() {
 		return id;
 	}
@@ -34,8 +24,7 @@ public class Product {
 		this.name = name;
 	}
 	public double getPrice() {
-		double discountPrice=(discount*price);
-		return (price-discountPrice);
+		return price;
 	}
 	public void setPrice(double price) {
 		this.price = price;
@@ -58,14 +47,6 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getDiscount() {
-		return discount;
-	}
-	public void setDiscount(double discount) {
-		this.discount = discount;
-	}
-	
-	
 	
 	
 	
