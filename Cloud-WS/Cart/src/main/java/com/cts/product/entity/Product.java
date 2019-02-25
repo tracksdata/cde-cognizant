@@ -2,14 +2,20 @@ package com.cts.product.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Product {
-	
+	@JsonProperty
 	private int id;
+	@JsonProperty
 	private String name;
+	@JsonProperty
 	private double price;
+	@JsonProperty
 	private String imageUrl;
+	@JsonProperty
 	private Date date;
+	
 	private String description;
 	public int getId() {
 		return id;
